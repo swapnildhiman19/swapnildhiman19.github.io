@@ -1,6 +1,6 @@
 // All site content lives here. Edit text in this file; layout code never needs to change for a wording fix.
 //
-// Source of truth: the résumé (Swapnil_Dhiman_Senior_iOS_AI_Engineer.pdf), plus details from the approved brief
+// Source of truth: the résumé (Swapnil_Dhiman_4_Years_Of_Experience.pdf), plus details from the approved brief
 // that do not conflict with it. Decision recorded 9 Nov 2026.
 // - Everything is Walmart work except VoiceNote and the Sports AI commentary capstone (personal projects).
 // - No internal ticket IDs, PR numbers, internal URLs, repo names or colleague names.
@@ -13,7 +13,7 @@ export const site = {
   description:
     'Swapnil Dhiman, Senior iOS Engineer and applied-AI builder at Walmart Global Tech. I build for two runtimes: the phone in your hand and the agent loop behind it.',
   // The résumé is published as provided (decision recorded 9 Nov 2026).
-  resume: '/Swapnil_Dhiman_Senior_iOS_AI_Engineer.pdf',
+  resume: '/Swapnil_Dhiman_4_Years_Of_Experience.pdf',
   updated: '2026-11-09',
 };
 

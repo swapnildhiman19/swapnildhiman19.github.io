@@ -244,7 +244,7 @@ async function newPage(opts = {}) {
   await page.goto(base + '/404.html');
   check('404 page renders', /isn’t here/.test(await page.locator('h1').textContent() ?? ''));
   check('404 page is noindex', (await page.locator('meta[name=robots]').getAttribute('content')) === 'noindex');
-  for (const f of ['/sitemap.xml', '/robots.txt', '/llms.txt', '/og.png', '/favicon.svg', '/Swapnil_Dhiman_Senior_iOS_AI_Engineer.pdf']) {
+  for (const f of ['/sitemap.xml', '/robots.txt', '/llms.txt', '/og.png', '/favicon.svg', '/Swapnil_Dhiman_4_Years_Of_Experience.pdf']) {
     const r = await page.request.get(base + f);
     check(`asset ${f} is served`, r.status() === 200);
   }
