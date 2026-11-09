@@ -1,0 +1,70 @@
+/* Design tokens. Three lane colours: the phone (indigo), the seam (amber), the loop (green).
+   The agent-loop window is a terminal, so it stays dark in both themes. */
+:root {
+  color-scheme: light;
+  --bg: #f4f3ee;
+  --bg-2: #ebe9e1;
+  --surface: #fbfaf7;
+  --ink: #141518;
+  --ink-2: #44484f;
+  --ink-3: #62666e;
+  --line: #d7d4ca;
+  --line-2: #e4e1d8;
+  --phone: #463ecf;
+  --phone-2: #e5e3fa;
+  --seam: #a14a00;
+  --seam-2: #f8e7d3;
+  --loop: #0a6e3d;
+  --loop-2: #d9eee1;
+  --focus: #2459e0;
+  --screen-bg: #fbfbfa;
+  --screen-ink: #15161a;
+  --screen-2: #eeeeec;
+  --shadow: 0 1px 2px rgb(20 21 24 / 0.06), 0 8px 24px -12px rgb(20 21 24 / 0.18);
+
+  --term-bg: #101113;
+  --term-bg-2: #17181b;
+  --term-line: #2a2c31;
+  --term-ink: #e8e9eb;
+  --term-dim: #9095a0;
+  --term-green: #5ee08f;
+  --term-violet: #b4b0ff;
+  --term-amber: #f5a524;
+
+  --f-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --f-serif: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --r1: 6px; --r2: 10px; --r3: 16px; --r4: 24px;
+  --maxw: 1240px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --header-h: 60px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0d0e10;
+  --bg-2: #141619;
+  --surface: #17191d;
+  --ink: #ecedee;
+  --ink-2: #bcc0c7;
+  --ink-3: #969ba3;
+  --line: #2c2f35;
+  --line-2: #22252a;
+  --phone: #aaa6ff;
+  --phone-2: #24224a;
+  --seam: #f5a524;
+  --seam-2: #2f2311;
+  --loop: #5ee08f;
+  --loop-2: #10291b;
+  --focus: #8fb0ff;
+  --screen-bg: #131417;
+  --screen-ink: #ecedee;
+  --screen-2: #222429;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -14px rgb(0 0 0 / 0.7);
+  --term-bg: #0a0b0c;
+  --term-bg-2: #121316;
+  --term-line: #24262b;
+}

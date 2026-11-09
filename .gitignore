@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+# research stays local: it reviews a colleague's site and holds screenshots of other people's sites
+research/
+# the downloaded source model (7.6 MB); public/models/phone.glb is built from it with `npm run model`
+assets-src/
+# large, regenerable QA output (the report, chapter shots and Lighthouse HTML are kept)
+qa/screens/
+qa/lighthouse/*.json

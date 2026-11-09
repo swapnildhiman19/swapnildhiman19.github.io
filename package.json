@@ -1,0 +1,37 @@
+{
+  "name": "swapnildhiman19.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Swapnil Dhiman's portfolio: two runtimes, the phone in your hand and the agent loop behind it.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "test": "node --test tests/*.test.ts",
+    "og": "node scripts/og.mjs",
+    "model": "node scripts/phone-model.mjs",
+    "poster": "node qa/xp.mjs http://localhost:4173 public/xp-poster.jpg 1600 1000 --poster",
+    "qa:shots": "node qa/shots.mjs http://localhost:4173 qa/screens",
+    "qa:interact": "node qa/interact.mjs http://localhost:4173 qa/interact",
+    "qa:xp": "node qa/xp.mjs http://localhost:4173 qa/xp"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "@types/node": "^26.6.6",
+    "@types/three": "^0.187.0",
+    "meshoptimizer": "^1.3.0",
+    "playwright-core": "^1.65.0",
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.7"
+  }
+}

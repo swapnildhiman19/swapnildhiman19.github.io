@@ -1,0 +1,41 @@
+/* Narrated diagrams. The SVG and the step list are complete without scripts; the player dims what is not in focus. */
+.dgm { border: 1px solid var(--line-2); border-radius: var(--r4); background: var(--surface); padding: clamp(16px, 2.4vw, 28px); display: grid; gap: var(--s4); }
+.dgm__cap { font-weight: 650; font-size: 1.05rem; }
+.dgm__canvas { overflow: hidden; }
+.dgm__svg { width: 100%; height: auto; }
+.dn rect { fill: var(--bg); stroke: var(--line); stroke-width: 1.2; }
+.dn[data-tone='loop'] rect { fill: var(--loop-2); stroke: var(--loop); }
+.dn[data-tone='phone'] rect { fill: var(--phone-2); stroke: var(--phone); }
+.dn[data-tone='seam'] rect { fill: var(--seam-2); stroke: var(--seam); }
+.dn[data-tone='plain'] rect { fill: var(--bg-2); }
+.dn__l { font: 650 15px var(--f-sans); fill: var(--ink); }
+.dn__s { font: 500 12px var(--f-mono); fill: var(--ink-3); }
+.de path { fill: none; stroke: var(--ink-3); stroke-width: 1.6; }
+.de--dashed path { stroke-dasharray: 5 5; }
+.de text { font: 500 12px var(--f-mono); fill: var(--ink-3); }
+.ah { fill: var(--ink-3); }
+.dn, .de { transition: opacity 0.35s var(--ease); }
+.dgm.is-stepping .dn:not(.is-on), .dgm.is-stepping .de:not(.is-on) { opacity: 0.22; }
+.dgm.is-stepping .dn.is-on rect { stroke-width: 2.4; }
+.dgm.is-stepping .de.is-on path { stroke: var(--ink); stroke-width: 2.2; }
+
+.dgm__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding-top: var(--s3); border-top: 1px solid var(--line-2); }
+.dgm__say { flex: 1 1 320px; min-height: 2.8em; font-size: 0.9375rem; }
+.dgm__n { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 999px; background: var(--bg-2); font: 500 0.75rem/1.6 var(--f-mono); color: var(--ink-2); }
+.dgm__ctl { display: flex; align-items: center; gap: 6px; }
+.icon-btn--main { width: 44px; height: 44px; background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.dgm__speed select { height: 40px; padding: 0 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font: 500 0.8125rem var(--f-mono); }
+
+.dgm__steps { display: grid; gap: 6px; padding: 0; list-style: none; counter-reset: s; }
+.dgm__steps li { counter-increment: s; display: grid; grid-template-columns: 1.9rem 1fr; gap: 10px; padding: 8px 10px; border-radius: var(--r2); color: var(--ink-2); font-size: 0.9375rem; transition: background-color 0.25s, color 0.25s; }
+.dgm__steps li::before { content: counter(s); display: grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 1px solid var(--line); font: 500 0.75rem/1 var(--f-mono); }
+.dgm__steps li.is-on { background: var(--bg-2); color: var(--ink); }
+.dgm__steps li.is-on::before { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+@media (min-width: 760px) { .dgm__steps { grid-template-columns: 1fr 1fr; } }
+/* Below 720px the SVG text would be too small to read: the numbered steps carry the diagram. */
+@media (max-width: 719.98px) { .dgm__canvas { display: none; } }
+
+/* A simple numbered flow, for projects without a narrated diagram */
+.flow { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin-bottom: var(--s4); }
+.flow li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: 0.875rem; }
+.flow__n { display: grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--bg-2); font: 500 0.75rem/1 var(--f-mono); }

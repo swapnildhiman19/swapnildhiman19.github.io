@@ -1,0 +1,61 @@
+/* iOS re-enactments */
+.ios__grid { display: grid; gap: clamp(28px, 4vw, 56px); align-items: start; }
+@media (min-width: 860px) { .ios__grid { grid-template-columns: minmax(260px, 340px) 1fr; } }
+.ios__device { display: grid; gap: var(--s4); justify-items: center; }
+.ios__device .device { max-width: 270px; }
+.seg { display: inline-flex; padding: 3px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+.seg button { min-height: 36px; padding: 6px 14px; border-radius: 999px; border: 0; background: transparent; font-size: 0.875rem; font-weight: 550; color: var(--ink-2); }
+.seg button[aria-pressed='true'] { background: var(--ink); color: var(--bg); }
+.seg--small button { min-height: 30px; padding: 4px 12px; font-size: 0.8125rem; }
+.ios__risk { display: flex; align-items: center; gap: 10px; font-size: 0.8125rem; color: var(--ink-3); }
+.ios__notes { display: grid; gap: var(--s6); }
+.ios__note { display: grid; gap: var(--s3); padding: var(--s5); border: 1px solid var(--line-2); border-radius: var(--r4); background: var(--surface); transition: border-color 0.25s, opacity 0.25s; }
+.ios__note h3 { font-size: 1.25rem; letter-spacing: -0.015em; }
+.ios__note h3 a { text-decoration: none; }
+.ios__note h3 a:hover { text-decoration: underline; }
+.ios__note p { color: var(--ink-2); }
+.ios__note .flow { margin: 0; }
+.ios__result b { color: var(--phone); font-size: 1.15rem; margin-right: 4px; }
+.js [data-flows] .ios__note.is-active { border-color: var(--phone); box-shadow: inset 3px 0 0 var(--phone); }
+
+/* How */
+.how .dgm { margin-top: var(--s2); }
+
+/* Journey */
+.journey__grid { display: grid; gap: var(--s7); }
+@media (min-width: 900px) { .journey__grid { grid-template-columns: minmax(240px, 0.8fr) 2fr; } }
+.roles { display: grid; gap: var(--s4); margin-bottom: var(--s6); }
+.roles li, .edu { display: grid; gap: 2px; }
+.roles b, .edu b { font-weight: 640; }
+.roles span, .edu span { font-size: 0.9375rem; color: var(--ink-2); }
+.timeline { display: grid; gap: 0; border-left: 1px solid var(--line); margin-left: 6px; }
+.timeline__year { position: relative; display: grid; gap: 6px; padding: 0 0 var(--s5) var(--s5); }
+@media (min-width: 640px) { .timeline__year { grid-template-columns: 4.5rem 1fr; gap: var(--s4); } }
+.timeline__year::before { content: ''; position: absolute; left: -6px; top: 0.45em; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink-3); }
+.timeline__year:last-child::before { border-color: var(--loop); background: var(--loop); }
+.timeline__y { font: 600 1rem/1.5 var(--f-mono); }
+.timeline__year ul { display: grid; gap: 4px; color: var(--ink-2); }
+
+/* Recognition, side projects, skills */
+.more { display: grid; gap: clamp(48px, 7vw, 80px); }
+.awards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.award { display: grid; gap: 4px; padding: 16px 18px; border-radius: var(--r3); border: 1px solid var(--line-2); background: var(--surface); }
+.award b { font-size: 1.02rem; }
+.award span { color: var(--ink-3); font-size: 0.875rem; }
+.side { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.side__item { display: grid; gap: 8px; align-content: start; padding: 18px; border-radius: var(--r3); border: 1px solid var(--line-2); background: var(--surface); }
+.side__item h3 { font-size: 1.05rem; }
+.side__item p { color: var(--ink-2); font-size: 0.9375rem; }
+.skills { display: grid; gap: var(--s5); }
+@media (min-width: 900px) { .skills { grid-template-columns: 1fr 1fr; } }
+
+/* Contact */
+.contact { display: grid; gap: var(--s4); justify-items: start; }
+.contact__title { font: 400 clamp(2rem, 1.3rem + 2.8vw, 3.6rem)/1.05 var(--f-serif); letter-spacing: -0.01em; max-width: 20ch; text-wrap: balance; }
+.contact__mail a { font-size: clamp(1.15rem, 0.9rem + 1.3vw, 1.85rem); font-weight: 600; letter-spacing: -0.015em; overflow-wrap: anywhere; }
+.contact__links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.contact__links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+.contact__links .i { width: 16px; height: 16px; }
+
+/* 404 */
+.nf { min-height: 50vh; display: grid; gap: var(--s4); align-content: center; }

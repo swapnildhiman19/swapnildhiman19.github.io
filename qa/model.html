@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Model check</title>
+<style>body { margin: 0; background: #111; } canvas { display: block; }</style>
+<script type="module">
+  // QA only: loads a phone model, logs every mesh's world box, and renders the front and the back.
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+  import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+  const src = new URL(location.href).searchParams.get('src') ?? '/assets-src/iphone_16_pro_max.glb';
+  const view = new URL(location.href).searchParams.get('view') ?? 'both';
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(1200, 800);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  document.body.append(renderer.domElement);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x111114);
+  scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+  const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+  const gltf = await loader.loadAsync(src);
+  const root = gltf.scene;
+  scene.add(root);
+  const only = new URL(location.href).searchParams.get('only');
+  if (only) root.traverse((o) => { if (o.isMesh) { o.visible = only.split(',').some((n) => o.name.includes(n)); o.material.side = THREE.DoubleSide; } });
+  root.updateMatrixWorld(true);
+  const all = new THREE.Box3().setFromObject(root);
+  const rows = [];
+  root.traverse((o) => {
+    if (!o.isMesh) return;
+    const b = new THREE.Box3().setFromObject(o);
+    const f = (v) => [v.x, v.y, v.z].map((n) => n.toFixed(3)).join(',');
+    rows.push(`${o.name} [${o.material.name}] min=${f(b.min)} max=${f(b.max)}`);
+  });
+  console.log('ALL', JSON.stringify(all.min), JSON.stringify(all.max));
+  console.log(rows.join('\n'));
+  const size = all.getSize(new THREE.Vector3()), c = all.getCenter(new THREE.Vector3());
+  const cam = new THREE.PerspectiveCamera(30, 1200 / 800, 0.01, 100);
+  const d = Math.max(size.x, size.y, size.z) * 2.2;
+  const views = { front: new THREE.Vector3(0, 0, d), back: new THREE.Vector3(0, 0, -d), left: new THREE.Vector3(-d, 0, 0), right: new THREE.Vector3(d, 0, 0), top: new THREE.Vector3(0, d, 0.001), tqf: new THREE.Vector3(-d * 0.75, d * 0.2, d * 0.6), tqb: new THREE.Vector3(d * 0.75, d * 0.2, d * 0.6) };
+  const v = views[view] ?? views.front;
+  cam.position.copy(c).add(v);
+  cam.lookAt(c);
+  renderer.render(scene, cam);
+  document.title = 'ready';
+</script>

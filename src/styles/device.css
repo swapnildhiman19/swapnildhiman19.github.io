@@ -1,0 +1,71 @@
+/* A phone drawn in CSS: my own frame, no manufacturer's design. Screen text scales with the device (cqi). */
+.device { width: 100%; max-width: 230px; margin: 0 auto; display: grid; gap: 10px; }
+.device__body { position: relative; aspect-ratio: 9 / 18.6; border-radius: 15% / 7.4%; padding: 3.6%; background: linear-gradient(150deg, #34363c 0%, #1a1b1f 45%, #0f1013 100%); box-shadow: 0 2px 0 rgb(255 255 255 / 0.06) inset, 0 0 0 1px rgb(0 0 0 / 0.35), 0 28px 50px -22px rgb(10 10 20 / 0.55); }
+.device__btn { position: absolute; width: 3px; border-radius: 2px; background: #2b2d32; }
+.device__btn--a { right: -2px; top: 24%; height: 11%; }
+.device__btn--b { left: -2px; top: 18%; height: 6%; }
+.device__screen { position: absolute; inset: 3.6%; border-radius: 11.5% / 5.6%; overflow: hidden; background: var(--screen-bg); color: var(--screen-ink); display: flex; flex-direction: column; container-type: inline-size; }
+.device__status { display: flex; justify-content: space-between; align-items: center; padding: 5cqi 8cqi 2cqi; font: 600 5cqi/1 var(--f-sans); }
+.device__cam { width: 4.6cqi; height: 4.6cqi; border-radius: 50%; background: #0b0b0d; box-shadow: 0 0 0 1.2cqi var(--screen-bg); }
+[data-theme='dark'] .device__cam { background: #000; box-shadow: 0 0 0 1px #2a2c31; }
+.device__sig { width: 9cqi; height: 3.6cqi; border-radius: 1cqi; background: currentColor; opacity: 0.85; clip-path: polygon(0 100%, 25% 100%, 25% 70%, 35% 70%, 35% 100%, 60% 100%, 60% 40%, 70% 40%, 70% 100%, 100% 100%, 100% 0, 90% 0, 90% 100%, 0 100%); }
+.device__cap { display: grid; gap: 2px; justify-items: center; text-align: center; }
+.device__what { font-size: 0.8125rem; color: var(--ink-2); }
+
+/* App screens */
+.app { flex: 1; display: flex; flex-direction: column; min-height: 0; position: relative; }
+.app__head { display: flex; align-items: center; justify-content: space-between; gap: 4cqi; padding: 4cqi 7cqi; }
+.app__title { font: 700 7.6cqi/1.1 var(--f-sans); letter-spacing: -0.02em; }
+.app__chip { font: 600 4.2cqi/1 var(--f-mono); padding: 1.8cqi 3cqi; border-radius: 99px; background: var(--screen-2); }
+.app__foot { margin-top: auto; padding: 4cqi 7cqi 7cqi; text-align: center; font-size: 4.6cqi; opacity: 0.7; }
+
+/* Living identity QR */
+.idcard { margin: 2cqi 6cqi 0; padding: 6cqi; border-radius: 6cqi; background: linear-gradient(160deg, color-mix(in srgb, var(--phone) 16%, var(--screen-bg)), var(--screen-bg)); border: 1px solid color-mix(in srgb, var(--phone) 22%, transparent); display: grid; justify-items: center; gap: 2.5cqi; position: relative; }
+.idcard__k { font: 600 4.2cqi/1.2 var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; }
+.idcard__name { font: 650 6.4cqi/1.2 var(--f-sans); }
+.idcard__qr { padding: 0; border: 0; background: none; width: 72cqi; border-radius: 3cqi; transition: transform 0.35s var(--ease); }
+.qr__bg { fill: #fff; }
+.qr__ink { fill: #111; }
+.qr { width: 100%; height: auto; border-radius: 3cqi; }
+.app--qr .qr { transition: opacity 0.35s; }
+.app--qr.is-refreshing .qr { opacity: 0.15; }
+.idcard__expired { position: absolute; inset: 0; border-radius: inherit; display: grid; place-content: center; justify-items: center; gap: 4cqi; background: color-mix(in srgb, var(--screen-bg) 88%, transparent); backdrop-filter: blur(3px); }
+.idcard__expired[hidden] { display: none; }
+.idcard__expired p { font: 650 6cqi/1.2 var(--f-sans); }
+.idcard__timer { display: flex; align-items: center; gap: 2.5cqi; font: 500 4.4cqi/1.2 var(--f-mono); }
+.idcard__ring svg { width: 6.5cqi; height: 6.5cqi; transform: rotate(-90deg); }
+.idcard__ring circle { fill: none; stroke-width: 4; stroke: var(--screen-2); }
+.idcard__ring .idcard__ring-fg { stroke: var(--phone); stroke-dasharray: 100; stroke-dashoffset: 0; }
+.device .btn--small { min-height: 0; padding: 2.6cqi 5cqi; font-size: 4.8cqi; }
+
+/* Expanded bottom sheet */
+.sheet { position: absolute; inset: auto 0 0 0; z-index: 4; padding: 5cqi 7cqi 9cqi; border-radius: 7cqi 7cqi 0 0; background: var(--screen-bg); box-shadow: 0 -10px 30px rgb(0 0 0 / 0.25); display: grid; gap: 4cqi; justify-items: center; transform: translateY(105%); transition: transform 0.4s var(--ease); }
+.sheet.is-open { transform: none; }
+.sheet__grab { width: 12cqi; height: 1.4cqi; border-radius: 99px; background: var(--screen-2); }
+.sheet .qr { width: 86cqi; }
+.sheet p { font-size: 4.6cqi; text-align: center; }
+.sheet__scrim { position: absolute; inset: 0; z-index: 3; background: rgb(0 0 0 / 0.3); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.sheet__scrim.is-open { opacity: 1; pointer-events: auto; }
+
+/* Flow screens (account linking, merge) */
+.flowscreen { flex: 1; display: flex; flex-direction: column; gap: 4cqi; padding: 4cqi 7cqi 8cqi; }
+.flowscreen__big { font: 650 7.4cqi/1.2 var(--f-sans); letter-spacing: -0.015em; }
+.flowscreen__small { font-size: 4.9cqi; line-height: 1.45; opacity: 0.8; }
+.flowscreen .btn { margin-top: auto; font-size: 5.2cqi; min-height: 0; padding: 3.6cqi 4cqi; }
+.flowscreen .btn--ghost { margin-top: 0; }
+.flowscreen__err { font-size: 4.6cqi; color: #c62828; }
+[data-theme='dark'] .flowscreen__err { color: #ff8a80; }
+.otp { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2cqi; }
+.otp input { width: 100%; aspect-ratio: 0.82; text-align: center; font: 650 7cqi/1 var(--f-mono); border: 1px solid color-mix(in srgb, var(--screen-ink) 22%, transparent); border-radius: 2.6cqi; background: var(--screen-2); padding: 0; }
+.otp input:focus-visible { outline: 2px solid var(--phone); outline-offset: 1px; }
+.otp.is-wrong input { border-color: #c62828; }
+.flowscreen__hint { font: 500 4.2cqi/1.3 var(--f-mono); opacity: 0.7; }
+.merge-list { display: grid; gap: 2.4cqi; font-size: 4.9cqi; padding: 0; list-style: none; }
+.merge-list li { display: flex; justify-content: space-between; padding: 2.6cqi 3.4cqi; border-radius: 2.6cqi; background: var(--screen-2); }
+.spinner { width: 12cqi; height: 12cqi; border-radius: 50%; border: 1.2cqi solid var(--screen-2); border-top-color: var(--phone); align-self: center; margin: 6cqi 0; }
+@media (prefers-reduced-motion: no-preference) { .spinner { animation: spin 0.8s linear infinite; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.okmark { width: 18cqi; height: 18cqi; border-radius: 50%; background: color-mix(in srgb, var(--loop) 18%, transparent); color: var(--loop); display: grid; place-items: center; align-self: center; font-size: 9cqi; margin: 4cqi 0; }
+.flowscreen__steps { padding: 0 7cqi; min-height: 4cqi; font: 500 4cqi/1 var(--f-mono); opacity: 0.6; }
+.flowscreen__center { text-align: center; }
+.app__title:focus { outline: none; }

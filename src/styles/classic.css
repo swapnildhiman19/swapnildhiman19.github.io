@@ -1,0 +1,33 @@
+/* Classic view: system fonts, no motion, printable. */
+:root { color-scheme: light dark; --bg: #fff; --ink: #111; --ink-2: #444; --line: #ddd; }
+@media (prefers-color-scheme: dark) { :root { --bg: #111214; --ink: #eceded; --ink-2: #b8bcc2; --line: #2c2f35; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 1rem/1.6 ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid #2459e0; outline-offset: 2px; }
+.skip { position: absolute; left: 8px; top: -60px; background: var(--ink); color: var(--bg); padding: 8px 12px; }
+.skip:focus { top: 8px; }
+.top { border-bottom: 1px solid var(--line); }
+.top__in { max-width: 46rem; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; text-decoration: none; }
+.brand__mark { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; background: var(--ink); color: var(--bg); font: 700 11px/1 ui-monospace, monospace; }
+.classic { max-width: 46rem; margin: 0 auto; padding: 24px 20px 48px; }
+.classic h1 { font-size: 2rem; margin: 0 0 8px; }
+.classic h2 { font-size: 1.15rem; margin: 32px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+.classic h3 { font-size: 1.02rem; margin: 18px 0 2px; }
+.classic p { margin: 4px 0; }
+.c-meta { color: var(--ink-2); font-size: 0.9rem; }
+.c-proj ul { margin: 6px 0; padding-left: 1.2em; }
+.foot { max-width: 46rem; margin: 0 auto; padding: 16px 20px 40px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.85rem; }
+.foot__in { display: grid; gap: 8px; }
+.foot__name, .foot__links { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; margin: 0; padding: 0; list-style: none; }
+.foot .i, .foot__name .brand__mark { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media print {
+  .top, .foot, .skip { display: none; }
+  body { font-size: 11pt; background: #fff; color: #000; }
+  .classic { max-width: none; padding: 0; }
+  .classic h2 { break-after: avoid; }
+  .c-proj { break-inside: avoid; }
+  a { text-decoration: none; }
+}

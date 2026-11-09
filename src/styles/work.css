@@ -1,0 +1,30 @@
+/* Work index: three lanes. Phone lane is twice as wide (it holds the most items). */
+.lanes { display: grid; gap: clamp(20px, 2.4vw, 28px); }
+@media (min-width: 760px) { .lanes { grid-template-columns: 1fr 1fr; } .lane[data-lane='phone'] { grid-column: 1 / -1; } .lane[data-lane='phone'] .lane__list { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1140px) { .lanes { grid-template-columns: 2fr 1fr 1fr; } .lane[data-lane='phone'] { grid-column: auto; } }
+/* The seam is short; on tall-enough screens it stays in view while the phone lane scrolls past. */
+@media (min-width: 1140px) and (min-height: 860px) { .lane[data-lane='seam'] { position: sticky; top: calc(var(--header-h) + 20px); } }
+
+.lane { --c: var(--ink); --c2: var(--bg-2); display: grid; align-content: start; gap: var(--s4); }
+.lane[data-lane='phone'] { --c: var(--phone); --c2: var(--phone-2); }
+.lane[data-lane='seam'] { --c: var(--seam); --c2: var(--seam-2); }
+.lane[data-lane='loop'] { --c: var(--loop); --c2: var(--loop-2); }
+.lane__head { border-top: 3px solid var(--c); padding-top: var(--s3); display: grid; gap: 4px; }
+.lane__name { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 650; color: var(--c); }
+.lane__name .i { width: 20px; height: 20px; }
+.lane__count { font: 500 0.75rem/1 var(--f-mono); color: var(--ink-3); }
+.lane__blurb { color: var(--ink-2); font-size: 0.875rem; }
+.lane__list { display: grid; gap: 10px; }
+
+.pc { display: grid; }
+.pc__link { display: grid; gap: 6px; align-content: start; height: 100%; padding: 14px 16px 16px; border: 1px solid var(--line-2); border-radius: var(--r3); background: var(--surface); text-decoration: none; transition: border-color 0.2s, transform 0.25s var(--ease), box-shadow 0.25s; }
+.pc__link:hover { border-color: var(--c); transform: translateY(-2px); box-shadow: var(--shadow); text-decoration: none; }
+.pc[data-lane='phone'] { --c: var(--phone); }
+.pc[data-lane='seam'] { --c: var(--seam); }
+.pc[data-lane='loop'] { --c: var(--loop); }
+.pc__metric { display: grid; gap: 2px; }
+.pc__metric b { font-size: 1.45rem; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; color: var(--c); font-variant-numeric: tabular-nums; }
+.pc__metric span { font-size: 0.78rem; line-height: 1.35; color: var(--ink-3); }
+.pc__title { font-weight: 640; font-size: 1rem; line-height: 1.3; letter-spacing: -0.01em; }
+.pc__one { color: var(--ink-2); font-size: 0.875rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.pc__meta { font: 500 0.6875rem/1.4 var(--f-mono); color: var(--ink-3); letter-spacing: 0.02em; margin-top: 2px; }

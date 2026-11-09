@@ -1,0 +1,15 @@
+/* Hero text, shown in the first chapter of the 3D experience. */
+.hero__name { font-size: clamp(2.6rem, 1.5rem + 3.9vw, 4.6rem); line-height: 0.98; font-weight: 660; letter-spacing: -0.04em; }
+.hero__where { color: var(--ink-2); font-size: 0.9375rem; }
+.tagline { font: 400 clamp(1.55rem, 1.15rem + 1.45vw, 2.35rem)/1.12 var(--f-serif); letter-spacing: -0.005em; text-wrap: balance; max-width: 22ch; margin-top: var(--s1); }
+.tagline em { font-style: italic; }
+.t-phone { color: var(--phone); }
+.t-loop { color: var(--loop); }
+
+.stats { display: grid; margin-top: var(--s2); border-top: 1px solid var(--line); }
+.stat { display: grid; grid-template-columns: 5.6rem 1fr; gap: var(--s3); align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line-2); }
+.stat__v { font-size: 1.3rem; font-weight: 680; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stat__l { color: var(--ink-2); font-size: 0.875rem; line-height: 1.4; }
+.stat:nth-child(1) .stat__v, .stat:nth-child(2) .stat__v { color: var(--loop); }
+.stat:nth-child(3) .stat__v, .stat:nth-child(4) .stat__v { color: var(--phone); }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--s2); }

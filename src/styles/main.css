@@ -1,0 +1,15 @@
+@import '@fontsource-variable/geist/wght.css';
+@import '@fontsource-variable/geist-mono/wght.css';
+@import '@fontsource/instrument-serif/latin-400.css';
+@import '@fontsource/instrument-serif/latin-400-italic.css';
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './hero.css';
+@import './device.css';
+@import './term.css';
+@import './work.css';
+@import './diagram.css';
+@import './sections.css';
+@import './project.css';
+@import './xp.css';

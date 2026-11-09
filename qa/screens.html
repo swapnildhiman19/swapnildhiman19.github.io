@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Screen check</title>
+<style>
+  body { margin: 0; background: #2a2a2e; display: flex; gap: 16px; padding: 16px; flex-wrap: wrap; }
+  canvas { width: 330px; height: auto; border-radius: 40px; box-shadow: 0 0 0 6px #000; }
+</style>
+<script type="module">
+  // QA only: draws every phone screen flat, so they can be checked without WebGL.
+  import { drawScreen, SCREEN_W, SCREEN_H } from '/src/client/xp/screens.ts';
+  const lock = {
+    widgets: [{ k: 'MIMO', v: '~1K installs' }, { k: 'Walmart', v: '4+ yrs · SDE III' }],
+    notes: [
+      { app: 'Hackathon', icon: 'trophy', title: 'Top 20 of 3,000+ entries', body: 'Walmart Global Tech Hackathon 2026' },
+      { app: 'Omni ID', icon: 'qr', title: '40% faster order verification', body: 'With the Omni ID identity QR code · Bravo Award' },
+      { app: 'Shipped', icon: 'plane', title: '10M+ users', body: 'Across the US, Mexico, Canada and Bodega, on flows I ship in Swift' },
+    ],
+  };
+  const t = Number(new URL(location.href).searchParams.get('t') ?? 5);
+  for (const id of ['lock', 'qr', 'identity', 'board', 'neural', 'loop']) {
+    const c = document.createElement('canvas');
+    c.width = SCREEN_W; c.height = SCREEN_H;
+    document.body.append(c);
+    drawScreen(c.getContext('2d'), { id, t, qrSeed: 42, qrLeft: 12.3, trace: [], lock });
+  }
+</script>

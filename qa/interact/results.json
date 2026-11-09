@@ -1,0 +1,322 @@
+[
+  {
+    "name": "3D: scene renders and replaces the still image",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: chapter \"overview\" becomes active",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: chapter \"glass\" becomes active",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: chapter \"identity\" becomes active",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: chapter \"neural\" becomes active",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: chapter \"board\" becomes active",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: chapter \"loop\" becomes active",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: part labels shown in the loop chapter",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: rail button jumps to its chapter",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "3D: pause motion toggles",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "router: typed prompt routes to premium (design intent floor)",
+    "ok": true,
+    "detail": "tier=2"
+  },
+  {
+    "name": "router: screen-reader summary announced",
+    "ok": true,
+    "detail": "Routed to premium in 44 milliseconds (simulated). Intent: de"
+  },
+  {
+    "name": "router: session turn advanced",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "router: example button runs a trace",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "router: low-confidence prompt uses the regex fallback",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "router: redo is capped at 3 per session",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "router: keeps at most 4 traces",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "qr: expanded sheet opens",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "qr: Escape closes the sheet",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "qr: focus returns to the code",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "qr: code expires after the sample expiry",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "qr: refresh shows a new code",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "theme: toggle switches theme",
+    "ok": true,
+    "detail": "light → dark"
+  },
+  {
+    "name": "theme: choice remembered after reload",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "sound: off by default",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "sound: toggle turns it on",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no console errors (home, desktop)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "player: next steps forward",
+    "ok": true,
+    "detail": "Step 2 / 6"
+  },
+  {
+    "name": "player: previous steps back",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "player: focused node highlighted",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "player: plays at 2× speed",
+    "ok": true,
+    "detail": "Step 2 / 6"
+  },
+  {
+    "name": "no console errors (project page)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "otp: wrong code shows an error",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "otp: right code links accounts (low risk)",
+    "ok": true,
+    "detail": " | Linked US ↔ MX Done ✓ Both accounts, one sign-in. Start over"
+  },
+  {
+    "name": "otp: high risk adds a step-up",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "otp: step-up then success",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "merge: preview shows after email step-up",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "merge: success after token exchange",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "menu: opens on tap",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "menu: closes after choosing a link",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no console errors (home, phone)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "keyboard: first Tab reaches the skip link",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "keyboard: 60 tabs move through distinct controls",
+    "ok": true,
+    "detail": "60 distinct"
+  },
+  {
+    "name": "keyboard: focused controls show a focus ring",
+    "ok": true,
+    "detail": "59/60; without an outline: INPUT:"
+  },
+  {
+    "name": "no-JS: name, numbers and all project titles are in the HTML",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no-JS: toy example trace is in the page",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no-JS: the still image of the phone is shown",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no-JS: JS-only controls are hidden",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no-JS: project page has diagram and steps",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no-JS: classic view lists all 17 projects",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "reduced motion: sections are not hidden for reveal",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "reduced motion: pause button hidden (nothing moves on its own)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "reduced motion: trace appears at once",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "reduced motion: diagram does not autoplay",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "no console errors (reduced motion)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "deep link /work/wibeyconductor/ returns 200",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "404 page renders",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "404 page is noindex",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "asset /sitemap.xml is served",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "asset /robots.txt is served",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "asset /llms.txt is served",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "asset /og.png is served",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "asset /favicon.svg is served",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "asset /Swapnil_Dhiman_Senior_iOS_AI_Engineer.pdf is served",
+    "ok": true,
+    "detail": ""
+  }
+]
