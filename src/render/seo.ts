@@ -1,5 +1,6 @@
 // Machine-readable files: JSON-LD, sitemap.xml, robots.txt, llms.txt.
 import { awards, experience, journey, lanes, person, projects, site, stats, type Project } from '../data.ts';
+import { ogImage } from './assets.ts';
 
 const personId = `${site.url}/#person`;
 
@@ -12,7 +13,7 @@ export function personLd(): object {
         '@id': personId,
         name: person.name,
         url: `${site.url}/`,
-        image: `${site.url}/og.png`,
+        image: ogImage,
         jobTitle: 'Senior Software Engineer, iOS (Applied AI)',
         description: person.summary,
         email: `mailto:${person.email}`,

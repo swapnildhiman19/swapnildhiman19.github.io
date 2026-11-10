@@ -3,6 +3,7 @@ import { h, raw, type Raw } from './h.ts';
 import { icons } from './icons.ts';
 import { person, site } from '../data.ts';
 import { resumeLink } from './parts.ts';
+import { ogImage } from './assets.ts';
 
 export interface PageMeta {
   path: string; // e.g. "/work/token-os/"
@@ -20,7 +21,7 @@ const PRE_PAINT = `(function(){var d=document.documentElement;d.classList.add('j
 
 export function head(m: PageMeta): Raw {
   const url = site.url + m.path;
-  const og = `${site.url}/og.png`;
+  const og = ogImage;
   return h`<head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
